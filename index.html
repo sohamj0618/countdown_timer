@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Countdown Timer</h1>
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="datetime-input">
+                    <label for="date-input">Target Date:</label>
+                    <input type="date" id="date-input" required>
+                    
+                    <label for="time-input">Target Time:</label>
+                    <input type="time" id="time-input" required>
+                </div>
+
+                <div class="timer-name">
+                    <label for="name-input">Event Name (optional):</label>
+                    <input type="text" id="name-input" placeholder="e.g., New Year's Eve">
+                </div>
+
+                <div class="controls">
+                    <button id="start-btn" class="btn-primary">Start Countdown</button>
+                    <button id="reset-btn" class="btn-secondary">Reset</button>
+                </div>
+            </div>
+
+            <div class="countdown-display">
+                <div id="event-name" class="event-name"></div>
+                
+                <div class="timer">
+                    <div class="time-unit">
+                        <span id="days">00</span>
+                        <small>Days</small>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="time-unit">
+                        <span id="hours">00</span>
+                        <small>Hours</small>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="time-unit">
+                        <span id="minutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+                    <div class="separator">:</div>
+                    <div class="time-unit">
+                        <span id="seconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+
+                <div id="message" class="message"></div>
+            </div>
+
+            <div class="saved-timers" id="saved-timers">
+                <h2>Saved Timers</h2>
+                <ul id="timers-list"></ul>
+            </div>
+        </main>
+    </div>
+
+    <audio id="alarm-sound" src="alarm.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
